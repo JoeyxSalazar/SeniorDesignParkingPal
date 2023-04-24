@@ -104,7 +104,7 @@ def updateFirebase(bools, img_path):
     #upload photo to application
     if os.path.isfile(img_path):
         print('Attempting photo upload')
-        storage_pyre.child("1.png").put(img)
+        storage_pyre.child("1.png").put(img_path)
     else:
         print('Error Uploading File')
 
@@ -124,7 +124,7 @@ def RunProtocol():
     while True:
         for x in range(1,8):
             #Setting up how to loop through each image
-            image = './photos/' + str(x) + '.png'
+            image = 'photos/' + str(x) + '.png'
             #Perform object detection on image
             results = model(image)
             #List of car coordinates (xmin, ymin, xmax, ymax)

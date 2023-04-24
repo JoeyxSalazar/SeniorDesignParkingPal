@@ -73,6 +73,7 @@ def checkoccupany(cars, spots):
             percents.append(overlap_percentage(car, values))
             if overlap_percentage(car, values) > 60:
                 is_occupied = True
+                cars.remove(car)
                 break
         bools.append(is_occupied)
     print(percents)
